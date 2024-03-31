@@ -1,12 +1,14 @@
 <template>
+  <v-responsive>
   <v-layout class="rounded rounded-md bg-white">
     <v-app class="hero" ref="neonCursorContainer">
       <div class=" h-screen cursor__wrapper ">
+       <div><Skills/></div>
         <div class="d-flex align-center justify-space-evenly mytitle">
-          <v-avatar class="myHeading" color="red" :size="28">
+          <v-avatar class="myHeading" :size="28">
             <tabler.IconHome />
           </v-avatar>
-          <p class="align-center myHeading py-3" hover @click="handleClick('Home')"> Home</p>
+          <router-link class="align-center myHeading py-3" to="/Home" hover @click="handleClick('Home')"> Home</router-link>
           <p class="align-center myHeading py-3"> About</p>
           <p class="align-center myHeading"> Skills</p>
           <p class="align-center myHeading"> Portfolio</p>
@@ -15,16 +17,42 @@
             <v-switch class="align-center mt-5 justify-center" v-model="brightness" color="red" @change="toggleTheme"
               :true-icon="tabler.IconSunHigh" :base-color="black" :false-icon="tabler.IconMoon" inset></v-switch>
           </div>
+          <span class="shape-blob"></span>
+        <span class="shape-blob one"></span>
+        <span class="shape-blob two"></span>
           <!-- <div class="align-center"><v-icon hover>
               <tabler.IconSun />
             </v-icon></div> -->
         </div>
+      <div class="d-flex justify-start position-absolute px-13 py-3" >
+        <span class="d-flex border-60 pborder">
+          <span class="d-flex border-60 pborder2">
+        <v-img class="ppimage border-50 d-flex justify-start" height="250"
+            width="250" alt="Ajay Rathnam" src="https://sguru.org/wp-content/uploads/2017/04/cool-boys-profile-picture-for-facebook-12.jpg">
 
-        <div class=" d-flex justify-start ps-5">
+        </v-img>
+        </span>
+       </span>
+      </div>
+      <div class="d-flex justify-center align-center pt-12" >
+        <v-card class="d-flex align-center justify-center" color="whitesmoke" height="300" width="400" variant="tonal" title="Ajay Rathnam">
+           <v-card-text>
+            I'm a software developer<br> with knowledge of web development and RPA bots development
+           </v-card-text>
+        </v-card>
+       
+      </div>
+      
+        <div class=" d-flex justify-end px-10 py-3">
           <v-card class="rounded " color="Red" variant="tonal" elevation="10" width="200" height="200"
             title="Education">
             <div class="d-flex justify-center">
-              <p>TEST DATA</p>
+              <v-card-item>
+                <li>SSLC - <strong>96.6%</strong></li>
+                <li>HSC - <strong>64%</strong></li>
+                <li>BSC - <strong>7.8 CGPA</strong></li>
+                <li>MCA - <strong>90%</strong></li>
+              </v-card-item>
             </div>
           </v-card>
         </div>
@@ -36,13 +64,14 @@
 
     </v-app>
   </v-layout>
+</v-responsive>
 </template>
 
 <script setup>
 import { useTheme } from 'vuetify'
 import { ref, onMounted, onUnmounted } from 'vue';
 import { tabler } from './components/Tabler/tabler-icons'
-
+import { Skills } from './components/Skills/Skills.vue'
 const customCursor = ref(null);
 let toggleValue = true;
 function toggleClick(){
@@ -54,7 +83,7 @@ function toggleClick(){
 
 onMounted(() => {
 // Attach mousemove event listener to track cursor position
-// document.addEventListener('mousemove', updateCursorPosition);
+//document.addEventListener('mousemove', updateCursorPosition);
 });
 
 function updateCursorPosition(event) {
@@ -68,10 +97,13 @@ const theme = useTheme()
 const brightness = ref(false);
 function toggleTheme () {
   theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark';
-  console.log('brightness', brightness)
+  document.querySelector('.cursor-trail').style.color = brightness.value ? 'black' : 'red';
+  document.querySelector('myHeading').style.color = brightness.value ? 'black' : 'white';
+  console.log('brightness', brightness.value)
 }
 function handleClick(page){
-  alert(`You clicked - ${page} `);
+this.$router.push('/Home')
+  // alert(`You clicked - ${page} `);
 }
 
 const halfCursorSize = 12;
@@ -103,6 +135,7 @@ const fancyCursor = (e) => {
 
   document.querySelector('.cursor').style.opacity = '1';
   document.querySelector('.cursor-trail').style.opacity = '1';
+  
 };
 
 const cursorLoader = () => {
@@ -113,6 +146,8 @@ const cursorLoader = () => {
       document.querySelector('.cursor').style.opacity = '0';
       document.querySelector('.cursor-trail').style.opacity = '0';
     }, false);
+    document.querySelector('.cursor').style.backgroundColor = brightness.value ?  'black' : 'red';
+  document.querySelector('.cursor-trail').style.border = brightness.value ? '2px solid black' : ' 2px solid red';
     window.addEventListener('scroll', () => {
       document.querySelector('.cursor').style.opacity = '0';
       document.querySelector('.cursor-trail').style.opacity = '0';
@@ -134,7 +169,7 @@ onUnmounted(() => {
 }
 .myHeading{
   font-size: 18px;
-  color: red;
+  //color: red;
   
 }
 .myHeading:hover{
@@ -147,10 +182,21 @@ onUnmounted(() => {
   background-size: cover;
   height: 100vh;
 }
+.ppimage{
 
+  border-radius: 50%;
 
+}
+.pborder{
+  border: 4px solid #F44336;
+  border-radius: 100%;
+}
+.pborder2{
+  border: 4px solid white;
+  border-radius: 100%;
+}
 .cursor {
-  background-color: whitesmoke;
+  //background-color: whitesmoke;
   width: 24px;
   height: 24px;
   transform-origin: center;
@@ -169,7 +215,7 @@ onUnmounted(() => {
     width: 50px;
     height: 50px;
     border-radius: 100%;
-    border: 2px solid #c52104;
+    //border: 2px solid #c52104;
     top: 14px;
     left: 14px;
     position: absolute;
@@ -246,5 +292,62 @@ onUnmounted(() => {
       max-width: fit-content;
     }
   }
+}
+
+.shape-blob {
+ pointer-events: none;
+	background:rgb(234, 62, 62);
+	height: 200px;
+	width: 200px;
+	border-radius: 30% 50% 20% 40%;
+  	animation: 
+		transform 20s ease-in-out infinite both alternate,
+		movement_one 40s ease-in-out infinite both;
+	opacity:.7;
+	position: absolute;
+	left: 70%;
+	top: 50%;
+}
+.shape-blob.one{
+	height: 500px;
+	width: 500px;
+	left: -200px;
+	top: -150px;
+	transform: rotate(-180deg);
+	animation: transform 30s ease-in-out infinite both alternate, movement_two 60s ease-in-out infinite both;
+}
+
+.shape-blob.two{
+	height: 350px;
+	width: 350px;
+	left: 500px;
+	top: -150px;
+	transform: rotate(-180deg);
+	animation: transform 30s ease-in-out infinite both alternate, movement_two 60s ease-in-out infinite both;
+}
+
+@keyframes transform
+{
+    0%,
+  100% { border-radius: 33% 67% 70% 30% / 30% 30% 70% 70%; } 
+   20% { border-radius: 37% 63% 51% 49% / 37% 65% 35% 63%; } 
+   40% { border-radius: 36% 64% 64% 36% / 64% 48% 52% 36%; } 
+   60% { border-radius: 37% 63% 51% 49% / 30% 30% 70% 70%; } 
+   80% { border-radius: 40% 60% 42% 58% / 41% 51% 49% 59%; } 
+}
+
+
+@keyframes movement_one
+{
+    0%,
+  100% { transform: none; }
+   50% { transform: translate(50%, 20%) rotateY(10deg) scale(1.2); }
+}
+
+@keyframes movement_two
+{
+    0%,
+  500% { transform: none; }
+   50% { transform: translate(50%, 20%) rotate(-200deg) scale(1.2);}
 }
 </style>
