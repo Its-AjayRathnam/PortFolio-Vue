@@ -1,77 +1,78 @@
 <template>
   <v-responsive>
-  <v-layout class="rounded rounded-md bg-white">
-    <v-app class="hero" ref="neonCursorContainer">
-      <div class=" h-screen cursor__wrapper ">
-       <div><Skills/></div>
-        <div class="d-flex align-center justify-space-evenly mytitle">
-          <v-avatar class="myHeading" :size="28">
-            <tabler.IconHome />
-          </v-avatar>
-          <router-link class="align-center myHeading py-3" to="/Home" hover @click="handleClick('Home')"> Home</router-link>
-          <p class="align-center myHeading py-3"> About</p>
-          <p class="align-center myHeading"> Skills</p>
-          <p class="align-center myHeading"> Portfolio</p>
-          <p class="align-center myHeading"> Contact</p>
-          <div class="toggles align-center">
-            <v-switch class="align-center mt-5 justify-center" v-model="brightness" color="red" @change="toggleTheme"
-              :true-icon="tabler.IconSunHigh" :base-color="black" :false-icon="tabler.IconMoon" inset></v-switch>
+    <v-layout class="rounded rounded-md bg-white">
+      <v-app class="hero" ref="neonCursorContainer">
+        <div class=" h-screen cursor__wrapper ">
+          <div>
+            <Skills />
           </div>
-          <span class="shape-blob"></span>
-        <span class="shape-blob one"></span>
-        <span class="shape-blob two"></span>
-          <!-- <div class="align-center"><v-icon hover>
+          <div class="d-flex align-center justify-space-evenly mytitle">
+            <v-avatar class="myHeading" :size="28">
+              <tabler.IconHome />
+            </v-avatar>
+            <a class="align-center myHeading py-3" hover @click="handleClick('Home')">Home</a>
+            <a class="align-center myHeading py-3" href="#about"> About</a>
+            <p class="align-center myHeading"> Skills</p>
+            <p class="align-center myHeading"> Portfolio</p>
+            <p class="align-center myHeading"> Contact</p>
+            <div class="toggles align-center">
+              <v-switch class="align-center mt-5 justify-center" v-model="brightness" color="red" @change="toggleTheme"
+                :true-icon="tabler.IconSunHigh" :base-color="black" :false-icon="tabler.IconMoon" inset></v-switch>
+            </div>
+            <span class="shape-blob"></span>
+            <span class="shape-blob one"></span>
+            <span class="shape-blob two"></span>
+            <!-- <div class="align-center"><v-icon hover>
               <tabler.IconSun />
             </v-icon></div> -->
+          </div>
+          <div class="d-flex justify-start position-absolute px-13 py-3" style="height:400px; width:400px;">
+            <span class="d-flex border-60 pborder" style="width: 350px; height: 350px;">
+              <span class="d-flex  border-60 pborder2 profile-img" style="width: 350px; height: 350px;"></span>
+            </span>
+          </div>
+
+          <div class="d-flex justify-center align-center pt-12">
+            <v-card class="d-flex align-center justify-center" color="whitesmoke" height="300" width="400"
+              variant="tonal" title="Ajay Rathnam">
+              <v-card-text>
+                I'm a software developer<br> with knowledge of web development and RPA bots development
+              </v-card-text>
+            </v-card>
+
+          </div>
+
+          <div class=" d-flex justify-end px-10 py-3">
+            <v-card class="rounded " color="Red" variant="tonal" elevation="10" width="200" height="200"
+              title="Education">
+              <div class="d-flex justify-center">
+                <v-card-item>
+                  <li>SSLC - <strong>96.6%</strong></li>
+                  <li>HSC - <strong>64%</strong></li>
+                  <li>BSC - <strong>7.8 CGPA</strong></li>
+                  <li>MCA - <strong>90%</strong></li>
+                </v-card-item>
+              </div>
+            </v-card>
+          </div>
+
         </div>
-      <div class="d-flex justify-start position-absolute px-13 py-3" >
-        <span class="d-flex border-60 pborder">
-          <span class="d-flex border-60 pborder2">
-        <v-img class="ppimage border-50 d-flex justify-start" height="250"
-            width="250" alt="Ajay Rathnam" src="https://sguru.org/wp-content/uploads/2017/04/cool-boys-profile-picture-for-facebook-12.jpg">
-
-        </v-img>
-        </span>
-       </span>
-      </div>
-      <div class="d-flex justify-center align-center pt-12" >
-        <v-card class="d-flex align-center justify-center" color="whitesmoke" height="300" width="400" variant="tonal" title="Ajay Rathnam">
-           <v-card-text>
-            I'm a software developer<br> with knowledge of web development and RPA bots development
-           </v-card-text>
-        </v-card>
-       
-      </div>
-      
-        <div class=" d-flex justify-end px-10 py-3">
-          <v-card class="rounded " color="Red" variant="tonal" elevation="10" width="200" height="200"
-            title="Education">
-            <div class="d-flex justify-center">
-              <v-card-item>
-                <li>SSLC - <strong>96.6%</strong></li>
-                <li>HSC - <strong>64%</strong></li>
-                <li>BSC - <strong>7.8 CGPA</strong></li>
-                <li>MCA - <strong>90%</strong></li>
-              </v-card-item>
-            </div>
-          </v-card>
+        <div style="height: 100vh;" id="about">
+          <h1>About</h1>
         </div>
+        <span class="cursor"></span>
+        <span class="cursor-trail"></span>
 
-      </div>
-
-      <span class="cursor"></span>
-      <span class="cursor-trail"></span>
-
-    </v-app>
-  </v-layout>
-</v-responsive>
+      </v-app>
+    </v-layout>
+  </v-responsive>
 </template>
 
 <script setup>
 import { useTheme } from 'vuetify'
 import { ref, onMounted, onUnmounted } from 'vue';
 import { tabler } from './components/Tabler/tabler-icons'
-import { Skills } from './components/Skills/Skills.vue'
+//import { Skills } from './components/Skills/Skills.vue'
 const customCursor = ref(null);
 let toggleValue = true;
 function toggleClick(){
@@ -184,16 +185,18 @@ onUnmounted(() => {
 }
 .ppimage{
 
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
 
 }
 .pborder{
   border: 4px solid #F44336;
-  border-radius: 100%;
+  border-radius: 70% 30% 69% 31% / 29% 54% 46% 71%;
 }
 .pborder2{
   border: 4px solid white;
-  border-radius: 100%;
+  border-radius: 70% 30% 69% 31% / 29% 54% 46% 71%;
 }
 .cursor {
   //background-color: whitesmoke;
@@ -349,5 +352,19 @@ onUnmounted(() => {
     0%,
   500% { transform: none; }
    50% { transform: translate(50%, 20%) rotate(-200deg) scale(1.2);}
+}
+
+.profile-img{
+  background-image: url('./assets/ProfilePic/PP.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+.cursor__wrapper{
+background: #200122;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #6f0000, #200122);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6f0000, #200122);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 </style>
