@@ -1,5 +1,5 @@
 
-import { IconHome, IconCamera, IconHeart, IconBrightness, IconSun, IconMoon, IconMenu2, IconSunHigh /* ...other icons */ } from '@tabler/icons-vue';
+import { IconHome, IconCamera, IconHeart, IconBrightness, IconSun, IconMoon, IconMenu2, IconSunHigh, IconArrowUp /* ...other icons */ } from '@tabler/icons-vue';
 
 export const tabler = {
   IconHome,
@@ -9,7 +9,8 @@ export const tabler = {
   IconSun,
   IconMoon,
   IconMenu2,
-  IconSunHigh
+  IconSunHigh,
+  IconArrowUp
   // ...add other icons here
 };
 
