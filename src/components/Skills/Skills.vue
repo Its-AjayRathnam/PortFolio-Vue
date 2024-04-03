@@ -1,6 +1,6 @@
 <template>
 <div>
-    Test
+    Test Skills Page
 </div>
 </template>
 <script>
