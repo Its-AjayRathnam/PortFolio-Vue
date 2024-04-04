@@ -8,10 +8,10 @@
             <span class="shape-blob two"></span>
             <div class="d-flex align-center justify-space-evenly mytitle">
               <p class="align-center myHeading py-3" @click="ScrollUp">Home</p>
-              <a class="align-center myHeading py-3" href="#about"> About</a>
               <a class="align-center myHeading" href="#skills">Skills</a>
-            <p class="align-center myHeading"> Portfolio</p>
-            <p class="align-center myHeading"> Contact</p>
+              <a class="align-center myHeading"  href="#projects">Projects</a>
+              <a class="align-center myHeading py-3" href="#about"> About</a>
+            <a class="align-center myHeading" href="#contact"> Contact</a>
             <!-- <div class="toggles align-center">
               <v-switch class="align-center mt-5 justify-center" v-model="brightness" color="red" @change="toggleTheme"
               :true-icon="tabler.IconSunHigh" :base-color="black" :false-icon="tabler.IconMoon" inset></v-switch>
@@ -22,7 +22,7 @@
             </v-icon></div> -->
           </div>
           <div class="d-flex justify-start align-start position-absolute">
-            <div class="magicpattern"></div>
+            <div class="magicpattern" ></div>
           </div>
           <!-- <div class="d-flex justify-start position-absolute px-13 py-3" style="height:300px; width:300px;">
             <span class="d-flex border-60 pborder" style="width: 300px; height: 300px;">
@@ -30,17 +30,21 @@
             </span>
           </div> -->
 
-          <div class="d-flex justify-center align-center pt-12">
-            <v-card class="d-flex align-center justify-center" color="whitesmoke" height="300" width="400"
+          <div class=" myInfo pt-11 px-12">
+            <div class="d-flex position-relative text-h3">
+              <p><span >Hey, I'm Ajay</span></p>
+            </div>
+            <div class="d-flex position-relative pt-4 text-h6"><p class="text-left">a <span style="color: tomato;">Software Programmer</span>,<br>"With 2 years experience in creating .NET core APIs,<br> Experienced in optimizing database queries, reducing query execution time by 40% and enhancing application performance." </p></div>
+            <!-- <v-card class="d-flex align-center justify-center" color="whitesmoke" height="300" width="400"
               variant="tonal" title="Ajay Rathnam" xs8>
               <v-card-text>
                 I'm a software developer<br> with knowledge of web development and RPA bots development
               </v-card-text>
-            </v-card>
+            </v-card> -->
 
           </div>
 
-          <div class=" d-flex justify-end px-10 py-3">
+          <!-- <div class=" d-flex justify-end px-10 py-3">
             <v-card class="rounded " color="Red" variant="tonal" elevation="10" width="200" height="200"
               title="Education">
               <div class="d-flex justify-center">
@@ -52,11 +56,49 @@
                 </v-card-item>
               </div>
             </v-card>
-          </div>
+          </div> -->
 
         </div>
         <div style="height: 100vh;" id="skills">
           <h1>Skills</h1>
+          <div>
+            <v-table>
+            <tbody>
+              <tr>
+                <td><v-img src="./assets/new-php-logo.svg" height="120" width="100"class="skillImages"></v-img></td>
+                <td><v-img src="./assets/html-5-svgrepo-com.svg" height="120" width="100" class="skillImages"></v-img></td>
+                <td>
+                  <v-img src="./assets/dotnet-svgrepo-com.svg" color="white" height="100" width="100" class="skillImages rounded-circle"></v-img>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <v-img src="./assets/sql-database-generic-svgrepo-com.svg" height="100" width="100" class="skillImages"></v-img>
+                </td>
+                <td>
+                  <v-img src="./assets/mongodb-svgrepo-com.svg" height="100" width="100" color="white" class="skillImages rounded-circle"></v-img>
+                </td>
+                <td>
+                  <v-img src="./assets/postgresql-svgrepo-com.svg" height="100" width="100" class="skillImages"></v-img>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <v-img src="./assets/artificial-bot-intelligence-svgrepo-com.svg" color="white" width="100" height="100" class="skillImages rounded-lg"></v-img>
+                </td>
+                <td></td>
+                <td>
+                  <v-img src="./assets/automation-engineering-hardware-2-svgrepo-com.svg" color="white" width="100" height="80" class="skillImages rounded-pill"></v-img>
+                </td>
+              </tr>
+            </tbody>
+          </v-table>
+          </div>
+         
+          
+        </div>
+        <div style="height: 100vh;" id="projects">
+          <h1>Projects</h1>
         </div>
         <div style="height: 100vh;"  id="about">
           <h1>About</h1>
@@ -181,6 +223,11 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss">
+.imgColumn{
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
 .mytitle{
   height: 90px;
   z-index: 2;
@@ -191,6 +238,7 @@ onUnmounted(() => {
   position: relative;
   text-decoration: solid;
   color: white;
+  filter: drop-shadow(2px 3px 5px Red);
   //color: red;
   
 }
@@ -199,11 +247,29 @@ onUnmounted(() => {
   text-decoration: line-through;
   cursor: pointer;
 }
+.myInfo{
+  margin: auto;
+  top: 6%;
+  left: 33%;
+  position: absolute;
+}
 .hero{
   background-image: url('../assets/appBg.jpg');
   background-size: cover;
   height: 100vh;
 }
+#skills{
+            display: table;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; 
+}
+.skillImages{
+  max-width: 100px; 
+            height: auto;
+}
+
 .ppimage{
 
   width: 100%;
@@ -380,9 +446,16 @@ onUnmounted(() => {
   background-size: cover;
   background-position: center;
 }
+.magicpattern:hover{
+  width: 500px;
+  height: 500px;
+  filter: drop-shadow(10px 10px 10px tomato);
+}
 .magicpattern { 
   width: 450px;
   height: 450px;
+  transition: height 2s, width 2s, filter 3s;
+  filter: drop-shadow(3px 3px 3px Red);
   background-size: cover;
   background-position: center center;
   background-repeat: repeat;
