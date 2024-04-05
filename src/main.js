@@ -14,6 +14,7 @@ import App from './App.vue'
 // import About from '../Components/About/About.vue'
 // Composables
 import { createApp } from 'vue'
+// import '@/styles/splash.scss'
 // import { createRouter, createWebHistory } from 'vue-router'
 
 // const routes = [{
