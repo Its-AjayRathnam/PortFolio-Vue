@@ -15,7 +15,7 @@
 .magicpattern:hover {
   width: 500px;
   height: 500px;
-  filter: drop-shadow(10px 10px 10px tomato);
+  filter: drop-shadow(10px 10px 10px #FF5252);
 }
 
 .skillImages {
@@ -33,7 +33,7 @@
 ;
 }
 .skillImages li:nth-of-type(5n + 2) img {
-  width: 12.5rem;
+  //width: 10em;
 }
 
 // .splashBg::before {

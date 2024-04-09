@@ -75,25 +75,25 @@
         <div class="h-screen" id="skills">
           <h1 class="text-h3">Skills</h1>
           <div class="mx-11">
-            <ul class="skillImages pt-12"
+            <ul class="skillImages pt-12 w-100"
               style="list-style: none; display: grid; grid-auto-rows: 13.75rem; grid-template-columns: auto auto auto; padding: 10px">
               <li class="skillImg" style="animation-delay: 3500ms; width: 30em;">
                 <div>
-                  <v-img src="./assets/new-php-logo.svg" :hover="!showSkills" height="120" width="100"></v-img>
+                  <v-img src="./assets/new-php-logo.svg" :hover="!showSkills" width="200"></v-img>
                   <v-card v-if="showSkills">
                     TEst
                   </v-card>
                 </div>
               </li>
-              <li class="skillImg" style="animation-delay: 1000ms; width: 25em;">
+              <li class="skillImg" style="animation-delay: 1000ms; width: 30em;">
                 <div>
-                  <v-img src="./assets/html-5-svgrepo-com.svg" height="120" width="100"></v-img>
+                  <v-img src="./assets/html-5-svgrepo-com.svg" width="170"></v-img>
                 </div>
               </li>
               <li class="skillImg" style="animation-delay: 1000ms;">
                 <div>
-                  <v-img src="./assets/dotnet-svgrepo-com.svg" class="rounded-circle" color="white" height="100"
-                    width="100"></v-img>
+                  <v-img src="./assets/dotnet-svgrepo-com.svg" class="rounded-circle" color="white" 
+                    width="150"></v-img>
                 </div>
               </li>
               <li class="skillImg" style="animation-delay: 3000ms;">
@@ -112,7 +112,7 @@
                   <v-img src="./assets/postgresql-svgrepo-com.svg" height="100" width="100"></v-img>
                 </div>
               </li>
-              <li class="skillImg" style="animation-delay: 3000ms;">
+              <li class="skillImg" style="animation-delay: 3000ms; width: 30em;">
                 <div>
                   <v-img src="./assets/artificial-bot-intelligence-svgrepo-com.svg" color="white" width="100"
                     height="100" class="rounded-lg"></v-img>
@@ -175,13 +175,11 @@
 
       </v-app>
     </v-layout>
-    <v-snackbar
-      v-model="snackbar"
-    >{{ snackbarText }}
-    <template v-slot:actions>
-      <i icon="close" class="mdi mdi-close" @click="snackbar=false"> </i>
-</template>
-  </v-snackbar>
+    <v-snackbar v-model="snackbar">{{ snackbarText }}
+      <template v-slot:actions>
+        <i icon="close" class="mdi mdi-close" @click="snackbar=false"> </i>
+      </template>
+    </v-snackbar>
   </v-responsive>
 </template>
 
