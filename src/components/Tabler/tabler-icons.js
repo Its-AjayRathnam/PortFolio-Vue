@@ -1,5 +1,5 @@
 
-import { IconBrandGmail,IconBrandGithub,IconBrandInstagram,IconMessage,IconPhone,IconMail,IconUser,IconHome, IconCamera, IconHeart, IconBrightness, IconSun, IconMoon, IconMenu2, IconSunHigh, IconArrowUp /* ...other icons */ } from '@tabler/icons-vue';
+import { IconX,IconBrandTelegram,IconBomb,IconBrandGmail,IconBrandGithub,IconBrandInstagram,IconMessage,IconPhone,IconMail,IconUser,IconHome, IconCamera, IconHeart, IconBrightness, IconSun, IconMoon, IconMenu2, IconSunHigh, IconArrowUp /* ...other icons */ } from '@tabler/icons-vue';
 
 export const tabler = {
   IconHome,
@@ -17,7 +17,10 @@ export const tabler = {
   IconMessage,
   IconBrandInstagram,
   IconBrandGithub,
-  IconBrandGmail
+  IconBrandGmail,
+  IconBomb,
+  IconBrandTelegram,
+  IconX
   // ...add other icons here
 };
 
