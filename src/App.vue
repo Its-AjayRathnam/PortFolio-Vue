@@ -75,25 +75,24 @@
         <div class="h-screen" id="skills">
           <h1 class="text-h3">Skills</h1>
           <div class="mx-11">
-            <ul class="skillImages pt-12"
-              style="list-style: none; display: grid; grid-auto-rows: 13.75rem; grid-template-columns: auto auto auto; padding: 10px">
+            <ul class="skillImages pt-12 w-100"
+              style="list-style: none; display: grid;grid-template-columns: auto auto auto; padding: 10px">
               <li class="skillImg" style="animation-delay: 3500ms; width: 30em;">
                 <div>
-                  <v-img src="./assets/new-php-logo.svg" :hover="!showSkills" height="120" width="100"></v-img>
+                  <v-img src="./assets/new-php-logo.svg" :hover="!showSkills" width="200"></v-img>
                   <v-card v-if="showSkills">
                     TEst
                   </v-card>
                 </div>
               </li>
-              <li class="skillImg" style="animation-delay: 1000ms; width: 25em;">
+              <li class="skillImg" style="animation-delay: 1000ms; width: 30em;">
                 <div>
-                  <v-img src="./assets/html-5-svgrepo-com.svg" height="120" width="100"></v-img>
+                  <v-img src="./assets/html-5-svgrepo-com.svg" width="170"></v-img>
                 </div>
               </li>
               <li class="skillImg" style="animation-delay: 1000ms;">
                 <div>
-                  <v-img src="./assets/dotnet-svgrepo-com.svg" class="rounded-circle" color="white" height="100"
-                    width="100"></v-img>
+                  <v-img src="./assets/dotnet-svgrepo-com.svg" class="rounded-circle" color="white" width="150"></v-img>
                 </div>
               </li>
               <li class="skillImg" style="animation-delay: 3000ms;">
@@ -112,7 +111,7 @@
                   <v-img src="./assets/postgresql-svgrepo-com.svg" height="100" width="100"></v-img>
                 </div>
               </li>
-              <li class="skillImg" style="animation-delay: 3000ms;">
+              <li class="skillImg" style="animation-delay: 3000ms; width: 30em;">
                 <div>
                   <v-img src="./assets/artificial-bot-intelligence-svgrepo-com.svg" color="white" width="100"
                     height="100" class="rounded-lg"></v-img>
@@ -136,7 +135,71 @@
         <div style="height: 100vh;" id="contact">
           <h1>Contact</h1>
           <div class="d-flex justify-center align-center">
-            <v-card class="" style="width:600px; box-shadow: 1px 6px 39px 2px rgba(232,26,26,0.67);
+
+            <div>
+              <div class="background">
+                <div class="container">
+                  <div class="screen">
+                    <div class="screen-header">
+                      <div class="screen-header-left">
+                        <div class="screen-header-button close"></div>
+                        <div class="screen-header-button maximize"></div>
+                        <div class="screen-header-button minimize"></div>
+                      </div>
+                      <div class="screen-header-right">
+                        <div class="screen-header-ellipsis"></div>
+                        <div class="screen-header-ellipsis"></div>
+                        <div class="screen-header-ellipsis"></div>
+                      </div>
+                    </div>
+                    <div class="screen-body">
+                      <div class="screen-body-item left">
+                        <div class="app-title">
+                          <span>Get In</span>
+                          <span>Touch</span>
+                        </div>
+
+                        <div class="d-flex align-center justify-start mt-10">
+                          <v-btn class="contactIcon mx-2" size="small" style="background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);"
+                            :icon="tabler.IconBrandInstagram"></v-btn>
+                          <v-btn class="contactIcon mx-2" size="small" :icon="tabler.IconBrandGithub"></v-btn>
+                          <v-btn class="contactIcon mx-2" size="small" :icon="tabler.IconBrandGmail"></v-btn>
+                          <VBtn icon="default" class="mx-2" size="small" color="blue">
+                            <div style="text-transform: none; border-radius:50%;">in</div>
+                          </VBtn>
+                        </div>
+                        <div class="app-contact">CONTACT INFO : +91 83 00 67 66 48</div>
+                      </div>
+                      <div class="screen-body-item">
+                        <div class="app-form">
+                          <div class="app-form-group">
+                            <input class="app-form-control" v-model="contact.name" placeholder="NAME">
+                          </div>
+                          <div class="app-form-group">
+                            <input class="app-form-control" v-model="contact.email" placeholder="EMAIL">
+                          </div>
+                          <div class="app-form-group">
+                            <input class="app-form-control" v-model="contact.phonenumber" placeholder="CONTACT NO">
+                          </div>
+                          <div class="app-form-group message">
+                            <input class="app-form-control" v-model="contact.message" placeholder="MESSAGE">
+                          </div>
+                          <div class="app-form-group buttons d-flex justify-space-evenly">
+                            <VBtn :prepend-icon="tabler.IconBomb" class="app-form-button" @click="clear">CLEAR</VBtn>
+                            <VBtn :prepend-icon="tabler.IconBrandTelegram" class="app-form-button"
+                              @click="submitMessage">SEND</VBtn>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <!-- <v-card class="" style="width:600px; box-shadow: 1px 6px 39px 2px rgba(232,26,26,0.67);
 -webkit-box-shadow: 1px 6px 39px 2px rgba(232,26,26,0.67);
 -moz-box-shadow: 1px 6px 39px 2px rgba(232,26,26,0.67);" variant="outlined">
               <v-toolbar-title style="text-align: center;" class="py-3 text-h5">Get In Touch</v-toolbar-title>
@@ -156,15 +219,9 @@
               <v-btn @click="clear" class=" my-1" style="align-content: center;">
                 CLEAR
               </v-btn>
-            </v-card>
+            </v-card> -->
 
           </div>
-          <div class="d-flex align-center justify-center">
-            <v-btn class="contactIcon mx-10 mt-3" :icon="tabler.IconBrandInstagram"></v-btn>
-            <v-btn class="contactIcon mx-10 mt-3" :icon="tabler.IconBrandGithub"></v-btn>
-            <v-btn class="contactIcon mx-10 mt-3" :icon="tabler.IconBrandGmail"></v-btn>
-          </div>
-
         </div>
 
         <div class="d-flex justify-end align-end px-6 py-6">
@@ -175,13 +232,12 @@
 
       </v-app>
     </v-layout>
-    <v-snackbar
-      v-model="snackbar"
-    >{{ snackbarText }}
-    <template v-slot:actions>
-      <i icon="close" class="mdi mdi-close" @click="snackbar=false"> </i>
-</template>
-  </v-snackbar>
+    <v-snackbar color="success" v-model="snackbar">{{ snackbarText }}
+      <template v-slot:actions>
+        <VBtn :icon="tabler.IconX" @click="snackbar = false"></VBtn>
+        <!-- <i icon="close" class="mdi mdi-close" @click="snackbar=false"> </i> -->
+      </template>
+    </v-snackbar>
   </v-responsive>
 </template>
 
@@ -256,7 +312,7 @@ const response = await fetch('https://chat.googleapis.com/v1/spaces/AAAA8X6dB-s/
   const data = await response.json();
   console.log(data);
   clear();
-  showSuccess('Recieved successfully')
+  showSuccess('Thank you for your response!')
 }
 catch(err){
 console.log("ty catch ",err);
@@ -358,6 +414,7 @@ onUnmounted(() => {
 </script>
 <style>
 @import "@/styles/splash.scss";
+@import "@/styles/contact.scss";
 </style>
 <style lang="scss">
 .imgColumn {
@@ -409,7 +466,6 @@ onUnmounted(() => {
 }
 
 .skillImages {
-  max-width: 100vh;
   height: 100vh;
   list-style-type: none !important;
 }
