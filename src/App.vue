@@ -24,7 +24,7 @@
           <div class="d-flex justify-center align-center  ">
             <div class=" justify-center align-center d-flex">
               <div class="splashBg position-relative justify-center align-center d-flex">
-                <img src="./assets/splashRed.jpg" alt="Ajay Rathnam" />
+                <img src="/assets/splashRed.jpg" alt="Ajay Rathnam" />
                 <div class="magicpattern px-10 ms-10"></div>
               </div>
             </div>
@@ -79,7 +79,7 @@
               style="list-style: none; display: grid;grid-template-columns: auto auto auto; padding: 10px">
               <li class="skillImg" style="animation-delay: 3500ms; width: 30em;">
                 <div>
-                  <v-img src="./assets/new-php-logo.svg" :hover="!showSkills" width="200"></v-img>
+                  <v-img src="/assets/new-php-logo.svg" :hover="!showSkills" width="200"></v-img>
                   <v-card v-if="showSkills">
                     TEst
                   </v-card>
@@ -87,39 +87,39 @@
               </li>
               <li class="skillImg" style="animation-delay: 1000ms; width: 30em;">
                 <div>
-                  <v-img src="./assets/html-5-svgrepo-com.svg" width="170"></v-img>
+                  <v-img src="/assets/html-5-svgrepo-com.svg" width="170"></v-img>
                 </div>
               </li>
               <li class="skillImg" style="animation-delay: 1000ms;">
                 <div>
-                  <v-img src="./assets/dotnet-svgrepo-com.svg" class="rounded-circle" color="white" width="150"></v-img>
+                  <v-img src="/assets/dotnet-svgrepo-com.svg" class="rounded-circle" color="white" width="150"></v-img>
                 </div>
               </li>
               <li class="skillImg" style="animation-delay: 3000ms;">
                 <div>
-                  <v-img src="./assets/sql-database-generic-svgrepo-com.svg" height="100" width="100"></v-img>
+                  <v-img src="/assets/sql-database-generic-svgrepo-com.svg" height="100" width="100"></v-img>
                 </div>
               </li>
               <li class="skillImg" style="animation-delay: 3000ms;">
                 <div>
-                  <v-img src="./assets/mongodb-svgrepo-com.svg" height="100" width="100" color="white"
+                  <v-img src="/assets/mongodb-svgrepo-com.svg" height="100" width="100" color="white"
                     class="rounded-circle"></v-img>
                 </div>
               </li>
               <li class="skillImg" style="animation-delay: 2500ms;">
                 <div>
-                  <v-img src="./assets/postgresql-svgrepo-com.svg" height="100" width="100"></v-img>
+                  <v-img src="/assets/postgresql-svgrepo-com.svg" height="100" width="100"></v-img>
                 </div>
               </li>
               <li class="skillImg" style="animation-delay: 3000ms; width: 30em;">
                 <div>
-                  <v-img src="./assets/artificial-bot-intelligence-svgrepo-com.svg" color="white" width="100"
+                  <v-img src="/assets/artificial-bot-intelligence-svgrepo-com.svg" color="white" width="100"
                     height="100" class="rounded-lg"></v-img>
                 </div>
               </li>
               <li class="skillImg" style="animation-delay: 2200ms;">
                 <div>
-                  <v-img src="./assets/automation-engineering-hardware-2-svgrepo-com.svg" color="white" width="100"
+                  <v-img src="/assets/automation-engineering-hardware-2-svgrepo-com.svg" color="white" width="100"
                     height="80" class="rounded-pill"></v-img>
                 </div>
               </li>
@@ -244,10 +244,10 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%,
 <script setup>
 import { useTheme, useDisplay } from 'vuetify'
 import { ref, reactive, onMounted, onUnmounted } from 'vue';
-import { tabler } from './components/Tabler/tabler-icons'
+import { tabler } from '/components/Tabler/tabler-icons'
 import { useVuelidate } from '@vuelidate/core'
 import { email, required } from '@vuelidate/validators'
-//import { Skills } from './components/Skills/Skills.vue'
+//import { Skills } from '/components/Skills/Skills.vue'
 const { mobile } = useDisplay();
 const customCursor = ref(null);
 let toggleValue = true;
@@ -452,7 +452,7 @@ onUnmounted(() => {
 }
 
 .hero {
-  background-image: url('../assets/appBg.jpg');
+  background-image: url('/assets/appBg.jpg');
   background-size: cover;
   height: 100vh;
 }
@@ -670,7 +670,7 @@ onUnmounted(() => {
 }
 
 .profile-img {
-  background-image: url('./assets/ProfilePic/PP.jpeg');
+  background-image: url('/assets/ProfilePic/PP.jpeg');
   background-size: cover;
   background-position: center;
 }

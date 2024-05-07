@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --fix --ignore-path .gitignore",
-    "deploy": "cd dist && cp index.html 404.html && cd .. && gh-pages -d dist"
+    "deploy": "vite build && gh-pages -d dist",
+    "generate": "vite build"
   },
   "dependencies": {
     "@mdi/font": "7.0.96",
@@ -16,6 +17,7 @@
     "@vuelidate/core": "^2.0.3",
     "@vuelidate/validators": "^2.0.4",
     "core-js": "^3.34.0",
+    "gh-pages": "^6.1.1",
     "roboto-fontface": "*",
     "vue": "^3.4.0",
     "vuetify": "^3.5.0"

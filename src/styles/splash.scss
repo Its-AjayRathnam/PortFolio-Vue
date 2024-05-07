@@ -1,12 +1,12 @@
 .splashBg {
-  // background: url('../assets/splashRed.jpg');
+  // background: url('/assets/splashRed.jpg');
   // background-size: cover;
   // background-position: center;
   position: relative;
   width: 480px;
   height: 450px;
   overflow: hidden;
-  mask-image: url(../assets/splash.png);
+  mask-image: url(/assets/splash.png);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   mask-size: 480px 450px;
@@ -39,7 +39,7 @@
 // .splashBg::before {
 //     mix-blend-mode: screen;
 //     content: '';
-//     background: url('../assets/splash.png'); /* Adjust the path as needed */
+//     background: url('/assets/splash.png'); /* Adjust the path as needed */
 //     background-position: center;
 //     width: 480px;
 //     top: 0;
